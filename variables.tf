@@ -32,25 +32,28 @@ variable "instance_type" {
   default     = "t3.micro"
 }
 
-variable "api_key" {
+variable "api_key_secret_id" {
   type        = string
-  description = "(Required) API key for web app to talk to SaaS platform."
+  description = "(Required) Secret ID for API key for web app to talk to SaaS platform."
 }
 
 variable "playbook_repository" {
   type        = string
-  description = "(Required) Repository to use for Ansible playbook."
+  description = "(Required) URL of Ansible playbook repository."
+}
+
+variable "ec2_role_name" {
+  type        = string
+  description = "(Required) Name of role to associate with EC2 instance profile."
 }
 
 # TFC variables
 variable "tfe_organization" {
   type        = string
-  description = "(Required) TFE organization "
+  description = "(Required) Name of TFC organization."
 }
 
 variable "tfe_workspace_name" {
   type        = string
-  description = "(Required) Name of networking workspace to get information"
+  description = "(Required) Name of networking workspace to get information."
 }
-
-
